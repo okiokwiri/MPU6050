@@ -37,9 +37,16 @@ THE SOFTWARE.
 
 #ifndef _MPU6050_H_
 #define _MPU6050_H_
+#include <stdint.h>
+
+class MPU6050
+{
+	public:
+		using write_func = void(*)(uint8_t /*register*/, uint8_t /*data*/, void*/*private data*/);
+		using read_func  = void(*)(uint8_t/*register*/,uint8_t*/*data_out*/,size_t/*length*/,void*/*private data*/);
 
 
-
+}
 
 class MPU6050_Base {
     public:
